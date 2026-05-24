@@ -1,28 +1,30 @@
 import React from 'react';
-import {
-  BrowserRouter,
-  Routes,
-  Route
-} from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-import LandingPage from './Dashboard';
-
-function DashboardPage() {
-  return (
-    <div className="p-10 text-3xl font-bold">
-      Dashboard Page Working 🚀
-    </div>
-  );
-}
+import LandingPage from './LandingPage';
+import DashboardPage from './DashboardPage';
 
 function App() {
   return (
-    <BrowserRouter>
+    <Router>
+
       <Routes>
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/dashboard" element={<DashboardPage />} />
+
+        {/* Landing Page */}
+        <Route
+          path="/"
+          element={<LandingPage />}
+        />
+
+        {/* Dashboard Page */}
+        <Route
+          path="/dashboard"
+          element={<DashboardPage />}
+        />
+
       </Routes>
-    </BrowserRouter>
+
+    </Router>
   );
 }
 
